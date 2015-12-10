@@ -21,9 +21,9 @@ public class Refactorizacion {
     public static boolean p = false;
 
     public static void main(String arg[]) {
-        int dig = 3;
-        int ndig = 0;
-        if (dig <= 0) {
+        int cifra = 3;
+        int numcifra = 0;
+        if (cifra <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         }
         for (int i = 1; i <= 99999; i++) {
@@ -35,16 +35,16 @@ public class Refactorizacion {
                 aux = aux / 10;
                 contador++;
             }
-            ndig = contador;
+            numcifra = contador;
 
-            if (ndig == dig) {
+            if (numcifra == cifra) {
                 if (i < 4) {
                     p = true;
                 } else {
                     if (i % 2 == 0) {
                         p = false;
                     } else {
-                        int contador1 = 0;
+                        int counter = 0;
                         int i1 = 1;
                         int k = (i - 1) / 2;
                         if (k % 2 == 0) {
@@ -53,15 +53,15 @@ public class Refactorizacion {
 
                         while (i1 <= k) {
                             if (i % i1 == 0) {
-                                contador1++;
+                                counter++;
                             }
                             i1 += 2;
-                            if (contador1 == 2) {
+                            if (counter == 2) {
                                 i1 = k + 1;
                             }
                         }
 
-                        if (contador1 == 1) {
+                        if (counter == 1) {
                             p = true;
                         }
                     }
