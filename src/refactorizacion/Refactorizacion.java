@@ -21,30 +21,34 @@ public class Refactorizacion {
     //Considero solo hasta numeros menores a 100000 (5 digitos),
     //por el hecho de k buscar numeros primos a partir de 6 digitos, el proceso se hace muy lento.
     public static boolean p = false;
-    public static int pedirNumeroCifras(){
-      
-         return Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero"));
-        
+
+    public static int pedirNumeroCifras() {
+
+        return Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero"));
+
     }
-    public static int pedirNumeroNumCifras(){
+
+    public static int pedirNumeroNumCifras() {
         return Integer.parseInt(JOptionPane.showInputDialog("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): "));
     }
- 
+
     public static void main(String arg[]) {
-        int cifra =pedirNumeroCifras();
-        int numcifra = 0  ;
-     
-         if(cifra<=0){
+        int cifra = pedirNumeroCifras();
+        int numcifra = 0;
+
+        if (cifra <= 0) {
             pedirNumeroNumCifras();
-           }
-         
-         
+        }
+
         for (int i = 1; i <= 99999; i++) {
             int aux = i;
 
             int contador = 0;
+            while (aux != 0) {
+                aux = aux / 10;
+                contador++;
+            }
 
-          
             numcifra = contador;
 
             if (numcifra == cifra) {
@@ -85,6 +89,3 @@ public class Refactorizacion {
     }
 
 }
-
-
-
